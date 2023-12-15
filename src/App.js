@@ -7,13 +7,16 @@ import Login from './Pages/Login'
  * ?  =====Import Components=====
  */
 import Home from './Pages/Home';
-import { AuthContext } from './store/FirebaseContext';
+import { AuthContext, FirebaseContext } from './store/Context';
 
 function App() {
 
-  const {user} = useContext(AuthContext)
+  const {setUser} = useContext(AuthContext)
+  const {firebase} = useContext(FirebaseContext)
   useEffect(()=>{
-    console.log(user)
+    firebase.auth().onAuthStateChanged((user)=>{
+      setUser(user)
+    })
   })
   return (
     <div>
