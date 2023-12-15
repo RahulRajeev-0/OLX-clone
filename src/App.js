@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Signup from './Pages/Signup'
 import Login from './Pages/Login'
 import Create from './Pages/Create'
+import View from './Pages/ViewPost'
 /**
  * ?  =====Import Components=====
  */
@@ -40,6 +41,11 @@ function App() {
 
       <Route path='/create'>
           <Create />
+          
+      </Route> 
+
+      <Route path='/view'>
+          <View />
           
       </Route> 
 
